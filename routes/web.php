@@ -13,3 +13,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('penerbit','PenerbitController');
+Route::resource('buku','BukuController');

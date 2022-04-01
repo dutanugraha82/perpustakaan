@@ -73,7 +73,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ '/data-tables' }}" class="nav-link">
+                <a href="{{ '/buku' }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Buku</p>
                 </a>
@@ -83,16 +83,10 @@
               <li class="nav-item">
                 <a href="{{ '/penerbit' }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Input Penerbit</p>
+                  <p>Data Penerbit</p>
                 </a>
               </li>
             </ul>
-              <li class="nav-item">
-                <a href="{{ '/cast' }}" class="nav-link">
-                  <i class="far fa-arrow"></i>
-                  <p>Input Data Peminjam</p>
-                </a>
-              </li>
             </ul>
           </li>
       </nav>

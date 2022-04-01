@@ -15,17 +15,12 @@ class CreateBukuTable extends Migration
     {
         Schema::create('buku', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama buku');
+            $table->string('nama');
             $table->string('genre');
             $table->string('deskripsi');
             // Foreign key nya
-            $table->unsignedBigInteger('kategori_id');
-            $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
             $table->unsignedBigInteger('penerbit_id');
             $table->foreign('penerbit_id')->references('id')->on('penerbit')->onDelete('cascade');
-            $table->unsignedBigInteger('peminjam_id');
-            $table->foreign('peminjam_id')->references('id')->on('peminjam')->onDelete('cascade');
-       
             $table->timestamps();
         });
     }

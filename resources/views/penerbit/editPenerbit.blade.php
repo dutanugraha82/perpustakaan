@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="container-fluid ml-4">
-    <form class="mt-4" action="/penerbit{{ $penerbit->id }}" method="post">
+    <form class="mt-4" action="/penerbit/{{ $penerbit->id }}" method="post">
         @method('put')
         @csrf
         <div class="form-group w-50">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use App\Buku;
+use App\Penerbit;
 
 class BukuController extends Controller
 {
@@ -14,7 +16,8 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        $buku = Buku::all();
+        return view('buku.daftarBuku',compact('buku'));
     }
 
     /**
@@ -24,7 +27,9 @@ class BukuController extends Controller
      */
     public function create()
     {
-        
+        $penerbit = Penerbit::all();
+        return view('buku.createBuku',compact('penerbit'));
+
     }
 
     /**
@@ -35,7 +40,29 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'nama' => 'required',
+                'genre' => 'required',
+                'deskripsi' => 'required',
+                'penerbit_id' => 'required'
+            ],
+            [
+                'nama.required' => 'Nama harus diisi',
+                'genre.required' => 'Genre harus diisi',
+                'deskripsi.required' => 'Deskripsi harus diisi',
+                'penerbit_id.required' => 'Penerbit harus diisi'
+            ]
+        );
+
+        $buku = new Buku;
+        $buku->nama = $request->nama;
+        $buku->genre = $request->genre;
+        $buku->deskripsi = $request->deskripsi;
+        $buku->penerbit_id = $request->penerbit_id;
+        $buku->save();
+
+        return redirect('/buku');
     }
 
     /**
@@ -57,7 +84,9 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $penerbit = Penerbit::findOrFail($id);
+        $buku = Buku::findOrFail($id);
+        return view('buku.editBuku',compact('buku','penerbit'));
     }
 
     /**
