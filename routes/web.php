@@ -12,4 +12,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','IndexController@index');
+Route::resource('penerbit','PenerbitController');

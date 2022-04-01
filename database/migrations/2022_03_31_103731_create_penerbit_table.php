@@ -15,8 +15,8 @@ class CreatePenerbitTable extends Migration
     {
         Schema::create('penerbit', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama penerbit');
-            $table->integer('ISBN');
+            $table->string('nama');
+            $table->string('ISBN');
             $table->string('bahasa');
             $table->date('tanggalTerbit');
             $table->timestamps();

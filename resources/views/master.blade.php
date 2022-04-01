@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>Perpustakaan</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -59,7 +59,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Data Buku
+                Data Perpustakaan
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -68,6 +68,22 @@
                 <a href="{{ '/data-tables' }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Peminjam</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ '/data-tables' }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Buku</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ '/penerbit' }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Penerbit</p>
                 </a>
               </li>
             </ul>
