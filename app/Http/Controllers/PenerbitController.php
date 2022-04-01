@@ -103,8 +103,8 @@ class PenerbitController extends Controller
             [
                 'nama.required' => 'Nama penerbit harus diisi',
                 'ISBN.required' => 'ISBN harus diisi',
-                'bahasa' => 'Bahasa harus diisi',
-                'tanggalTerbit' => 'Tanggal terbit harus diisi'
+                'bahasa.required' => 'Bahasa harus diisi',
+                'tanggalTerbit.required' => 'Tanggal terbit harus diisi'
             ]
             );
 

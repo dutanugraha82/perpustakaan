@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-            @forelse ($buku as $index=>$item)
+            @forelse ($buku as $item)
          <tr>
             <td>{{ $item->nama  }}</td>
             <td>{{ $item->genre }}</td>

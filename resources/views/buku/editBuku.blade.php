@@ -5,8 +5,9 @@
 
 @section('content')
 <div class="container-fluid ml-4">
-    <form class="mt-4" action="/buku" method="post">
+    <form class="mt-4" action="/buku/{{ $buku->id }}" method="post">
         @csrf
+        @method('put')
         <div class="form-group w-50">
           <label>Nama Buku</label>
           <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Nama penerbit" name="nama" value="{{ $buku->nama }}">
@@ -35,9 +36,9 @@
                 <option value="">Pilih Penerbit</option>
                 @foreach ($penerbit as $item)
                     @if ($item->id === $buku->penerbit_id)
-                        <option value="{{ $item->nama }}" selected>{{ $item->nama }}</option>
+                        <option value="{{ $item->id }}" selected>{{ $item->nama }}</option>
                     @else
-                        <option value="{{ $item->nama }}">{{ $item->nama }}</option>
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
                     @endif
                 @endforeach
             </select>

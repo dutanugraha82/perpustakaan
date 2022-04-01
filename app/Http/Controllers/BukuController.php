@@ -84,7 +84,7 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        $penerbit = Penerbit::findOrFail($id);
+        $penerbit = Penerbit::all();
         $buku = Buku::findOrFail($id);
         return view('buku.editBuku',compact('buku','penerbit'));
     }
@@ -98,7 +98,28 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+            [
+                'nama' => 'required',
+                'genre' => 'required',
+                'deskripsi' => 'required',
+                'penerbit_id' => 'required'
+            ],
+            [
+                'nama.required' => 'Nama penerbit harus diisi',
+                'genre.required' => 'Genre harus diisi',
+                'deskrips.required' => 'Deskripsi harus diisi',
+                'penerbit_id.required' => 'Penerbit terbit harus diisi'
+            ]
+            );
+
+            $buku = Buku::find($id);
+            $buku->nama = $request->nama;
+            $buku->genre = $request->genre;
+            $buku->deskripsi = $request->deskripsi;
+            $buku->penerbit_id = $request->penerbit_id;
+            $buku->save();
+            return redirect('/buku');
     }
 
     /**
@@ -109,6 +130,8 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $buku = Buku::find($id);
+        $buku->delete();
+        return redirect('/buku');
     }
 }
