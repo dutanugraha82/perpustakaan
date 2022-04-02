@@ -16,8 +16,8 @@ class CreatePeminjamTable extends Migration
         Schema::create('peminjam', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->integer('nik');
-            $table->integer('noHp');
+            $table->string('nik');
+            $table->string('nohp');
             $table->text('alamat');
             $table->timestamps();
         });

@@ -65,7 +65,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ '/data-tables' }}" class="nav-link">
+                <a href="{{ '/peminjam' }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Peminjam</p>
                 </a>
